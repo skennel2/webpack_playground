@@ -1,5 +1,7 @@
-// exports.value = 'hello world'
+function formatString(text) {
+    return '[' + text + ']]'
+}
 
-export default {
-    value: 'Hello World'
+export function getHello(name) {
+    return formatString('Hello ' + name + '!!!')
 }
