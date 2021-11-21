@@ -26,7 +26,11 @@ module.exports = {
   
 ---
   
-# config output.filename
+# Caching
+
+https://webpack.kr/guides/caching/
+
+빌드되어 번들링되는 파일의 이름을 지정할때 아래와 같이 옵션을 줄수있다.
 
 ```
 output.filename: 'bundle_[name]_[hash].js' 
@@ -48,7 +52,8 @@ https://medium.com/@sahilkkrazy/hash-vs-chunkhash-vs-contenthash-e94d38a32208
   
 Hash방식은 빌드될때 마다 하나라도 새로운 변경접이 있으면 모든 엔트리포인트 번들파일의 해시를 새로 딴다.  
 chunkhash방식은 변경사항이 존재하는 엔트리포인트의 번들파일만 해시가 새로 따진다.  
-  
+contenthash 방식은 빌드된 파일의 콘텐츠로 계산되는 해시값을 가진다. 
+
 case1  
 1. chunkhash방식 해시
  output.filename: 'bundle_[name]_[chunkhash].js
@@ -59,6 +64,13 @@ case1
 6. c 모듈에 변경사항 발생 
 7. 빌드
 8. a, b의 번들파일 해시는 모두 변경된다.
+
+## hash silce
+
+https://sk92.tistory.com/4
+
+[hash:8] 처럼 원하는 length만큼 slice 가능
+ex) 1c661c758604b2fee15d -> 1c661c75
 
 
 ## enrty를 오브젝트로 설정했을 때의 의미
