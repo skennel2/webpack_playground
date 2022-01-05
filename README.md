@@ -53,20 +53,20 @@ contenthash 방식은 빌드된 파일의 콘텐츠로 계산되는 해시값을
 
 case1  
 1. chunkhash방식 해시
- output.filename: 'bundle_[name]_[chunkhash].js
-2. entry point로 a, b, c 존재
-3. a와 b는 c모듈에서 export하는 함수를 호출해서 사용한다.
-4. 빌드 
-5. a,b 번들파일 생성됨, c의 내용자체가 a,b에 포함되고 c는 비어있는 형태로 빌드된다.
-6. c 모듈에 변경사항 발생 
-7. 빌드
-8. a, b, c의 번들파일 해시가 모두 변경된다. 기대한 결과는 c번들만 변경되는것.
+    - `output.filename: 'bundle_[name]_[chunkhash].js`
+1. entry point로 a, b, c 존재
+1. a와 b는 c모듈에서 export하는 함수를 호출해서 사용한다.
+1. 빌드 
+1. a,b 번들파일 생성됨, c의 내용자체가 a,b에 포함되고 c는 비어있는 형태로 빌드된다.
+1. c 모듈에 변경사항 발생 
+1. 빌드
+1. a, b, c의 번들파일 해시가 모두 변경된다. 기대한 결과는 c번들만 변경되는것.
   
 이유는 c 모듈의 내용이 a,b 모듈에 중복되어서 포함되기 때문이다.  
 이 중복을 제거하려면 코드스플리팅을 이용해야하며
-아래의 dependOn을 활용하는것도 방법이다.
+아래의 **dependOn**을 활용하는것도 방법이다.
   
-```
+```javascript
     a: {
         import: './a.js',
         dependOn: 'c'
@@ -77,7 +77,7 @@ case1
 https://sk92.tistory.com/4
 
 [hash:8] 처럼 원하는 length만큼 slice 가능
-ex) 1c661c758604b2fee15d -> 1c661c75
+> 1c661c758604b2fee15d -> 1c661c75
   
 ## enrty를 오브젝트로 설정했을 때의 의미
 ``` javascript
@@ -100,6 +100,8 @@ ex) 1c661c758604b2fee15d -> 1c661c75
         }),
     ],
 ```
+  
+---  
   
 # 한글 문서  
 https://webpack.kr/concepts  
