@@ -7,8 +7,15 @@ module.exports = {
     // entry: './index.js',
     // 멀티 엔트리 포인트
     entry: {
-        entry: './index.js',
-        test: './test.js',
+        entry: {
+            import: './index.js',
+            dependOn: 'module'
+        },
+        test: {
+            import: './test.js',
+            dependOn: 'module'
+        },
+        module: './module.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

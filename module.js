@@ -3,5 +3,5 @@ function formatString(text) {
 }
 
 export function getHello(name) {
-    return formatString('Hello ' + name + '!!!')
+    return formatString('Hello ' + name + '!!!!')
 }
