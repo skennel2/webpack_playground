@@ -46,7 +46,7 @@ https://medium.com/@sahilkkrazy/hash-vs-chunkhash-vs-contenthash-e94d38a32208
 
 기본적으로 브라우저는 정적 자원을 캐싱해서 제공하기 때문에 내용이 업데이트 되어도 사용자에게는 변경사항이 적용되지 않을 수가 있다.
   
-## output.filename에서 사용하는 세가지 해시옵션 Hash vs chunkhash vs ContentHash
+## 세가지 해시옵션 Hash vs chunkhash vs ContentHash
 Hash방식은 빌드될때 마다 하나라도 새로운 변경접이 있으면 모든 엔트리포인트 번들파일의 해시를 새로 딴다.  
 chunkhash방식은 변경사항이 존재하는 엔트리포인트의 번들파일만 해시가 새로 따진다.  
 contenthash 방식은 빌드된 파일의 콘텐츠로 계산되는 해시값을 가진다. 
