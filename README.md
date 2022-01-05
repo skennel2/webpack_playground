@@ -38,8 +38,8 @@ output.filename: 'bundle_[name]_[hash].js'
 [hash][chunkhash] 황용해 이렇게 위와 같이 지정했을 경우 동일한 소스파일 대상으로는 동일한 해시값이 떨어진다.  
  그리고 해시의 특징상 극히 일부의 소스가 바뀌어도 해시값은 완전히 바뀐다.  
   
-? [chunkhash]는 정확히 뭐지  
-? 그 전에 번들파일에 해시를 붙이는게 왜 필요한거지..
+> ? [chunkhash]는 정확히 뭐지  
+> ? 그 전에 번들파일에 해시를 붙이는게 왜 필요한거지..
   
 ## 정적파일에 해시가 필요한 이유
 https://medium.com/@sahilkkrazy/hash-vs-chunkhash-vs-contenthash-e94d38a32208  
