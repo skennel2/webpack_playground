@@ -2,7 +2,7 @@
 # webpack.config.js vs code에서 자동완성 사용하기  
 https://joshuatz.com/posts/2020/vscode-intellisense-autocomplete-for-webpack-config-files/  
 
-```
+```javascript
 const path = require('path')
 
 /**@type {import('webpack').Configuration} */
