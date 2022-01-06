@@ -89,7 +89,12 @@ https://sk92.tistory.com/4
   
 ---
   
-# HtmlWebpackPlugin
+# Plugin
+https://webpack.kr/plugins  
+
+기본적으로 제공되는 플러그인이 있는듯하다.
+  
+## HtmlWebpackPlugin
 웹팩으로 번들링된 청크파일을 사용하는 html파일을 생성하는 과정을 단순화시키는 플러그인
 이를테면 해시가 붙어 바뀌는 이름을 자동으로 html의 script태그에 적용한다던가하는 편리한 기능들이 포함된다.  
 
