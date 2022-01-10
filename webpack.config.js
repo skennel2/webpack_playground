@@ -1,23 +1,27 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
+const __dirname = path.resolve();
+
+// 아래 @type 어노테이션이 붙으면 설정파일 작성할때 인텔리센스 지원을 받을수 있음
 /**@type {import('webpack').Configuration} */
-module.exports = {
+const config = {
     // 단일 엔트리 포인트
     // entry: './index.js',
     // 멀티 엔트리 포인트
     entry: {
         entry: {
             import: './src/index.js',
-            dependOn: 'module'
+            dependOn: 'module',
         },
         test: {
             import: './src/test.js',
-            dependOn: 'module'
+            dependOn: 'module',
         },
         module: './src/module.js'
     },
     output: {
+        // 빌드 결과물을 내릴 경로
         path: path.resolve(__dirname, 'dist'),
         // Hash vs chunkhash vs ContentHash
         filename: 'bundle_[name]_[chunkhash].js',
@@ -47,3 +51,5 @@ module.exports = {
         }),
     ],
 };
+
+export default config;
