@@ -108,5 +108,14 @@ https://webpack.kr/plugins
   
 ---  
   
+# DevServer
+
+## hot 옵션과 liveReload 옵션의 차이는 뭘까?
+https://medium.com/@ssmak/whats-the-difference-between-live-reload-and-hot-reload-9a013fb4c288  
+live reload는 모든 페이지가 다시 로딩되며 모든 state가 초기화된다.  
+hot reload는 오직 부분만 변경되며 기존 state는 유지된다.
+  
+---
+  
 # 한글 문서  
 https://webpack.kr/concepts  

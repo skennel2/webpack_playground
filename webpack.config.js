@@ -44,6 +44,8 @@ const config = {
         compress: true,
         port: 9000,
         hot: true,
+        // liveReload: true,
+        logging: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
