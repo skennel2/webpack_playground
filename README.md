@@ -109,11 +109,17 @@ https://webpack.kr/plugins
 ---  
   
 # DevServer
+webpack-dev-server 패키지로 활성화  
 
 ## hot 옵션과 liveReload 옵션의 차이는 뭘까?
 https://newbedev.com/what-is-the-difference-between-hot-reloading-and-live-reloading-in-react-native  
+  
 live reload는 파일이 변경되었을때 모든 앱을 다시 리프레쉬하여 모든 state가 초기화된다.  
 hot reload는 오직 부분만 변경되며 기존 state는 유지된다.
+
+## webpack.config의 watch 옵션
+watch 옵션의 디폴트는 false 이지만 webpack-dev-server를 사용할 경우 자동으로 true로 세팅된다.  
+webpack의 serve명령어를 사용하면 watch: true로 설정하여도 에러를 뱉는데 의미없는 옵션으로 보는듯하다.
   
 ---
   

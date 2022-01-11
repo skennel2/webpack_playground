@@ -45,13 +45,17 @@ const config = {
         port: 9000,
         hot: true,
         // liveReload: true,
-        logging: true,
+        
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development',
         }),
     ],
+    // 파일이 변경되는 것을 감시하여 다시 컴파일할것인지 여부
+    // false가 초기값이지만 webpack-dev-server를 사용하면 기본적으로 활성화된다.
+    // serve 명령어와 함께 사용하면 true라도 에러가 발생한다.
+    // watch: true
 };
 
 export default config;
