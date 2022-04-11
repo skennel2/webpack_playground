@@ -25,6 +25,30 @@ module.exports = {
   
 ---
   
+# Development
+```javascript
+// webpack.config.json
+{
+    mode: 'development'
+}
+```
+
+## Source Map 
+번들된 파일의 소스코드와 원본 소스코드를 매핑하는 기술  
+에러가 발생했을때 실제 에러가 발생한것은 번들된 파일이지만 실제 에러가 존재하는 소스파일을 찾아갈수 있게 해준다. 
+
+## inline source map
+```javascript
+// webpack.config.json
+{
+    mode: 'development',
+    devtool: 'inline-source-map'
+}
+```
+이 옵션을 사용하고 소스파일에 일부로 에러를 심은 후 빌드하고 dist/index.html을 브라우저에서 열어보면 해당하는 에러를 로깅하는데 원본소스파일을 트레이스 해준다.
+  
+---
+  
 # Caching
 https://webpack.kr/guides/caching/
 
@@ -109,6 +133,10 @@ https://webpack.kr/plugins
 ---  
   
 # DevServer
+```bash
+npm install --save-dev webpack-dev-server
+```
+
 webpack-dev-server 패키지로 활성화  
 
 ## hot 옵션과 liveReload 옵션의 차이는 뭘까?
