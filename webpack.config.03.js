@@ -25,6 +25,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist/03_Spliting'),
+        clean: true
     },
     plugins: [
         new HtmlWebpackPlugin({
