@@ -24,7 +24,9 @@ module.exports = {
             },
         ],
     },
+    // development와 production으로 지정가능
     mode: 'development',
+    // 인라인 소스맵 사용ㄴ\
     devtool: 'inline-source-map',
     // webpack serve 명령어로 아래 옵션으로 지정된 개발서버 실행
     devServer: {
@@ -34,7 +36,6 @@ module.exports = {
         port: 9000,
         hot: true,
         // liveReload: true,
-        
     },
     plugins: [
         new HtmlWebpackPlugin({

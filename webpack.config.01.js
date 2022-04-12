@@ -12,8 +12,8 @@ module.exports = {
             import: './src/01_Default/index.js',
             dependOn: 'module',
         },
-        test: {
-            import: './src/01_Default/test.js',
+        another_entry: {
+            import: './src/01_Default/another_entry.js',
             dependOn: 'module',
         },
         module: './src/01_Default/module.js'

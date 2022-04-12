@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpack_playground=self.webpackChunkwebpack_playground||[]).push([[497],{459:(e,a,n)=>{var c=n(871);!function(){const e=document.createElement("div");e.classList.add("hello"),e.append((0,c.u)("World!!!")),document.body.append(e)}()}},e=>{e(e.s=459)}]);

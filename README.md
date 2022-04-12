@@ -50,7 +50,41 @@ module.exports = {
   
 ---
 
+# Loader 
+Assets들을 어떻게 해석할것인지를 지정한다.  
+아래와 같이 구성하면 test 구문에 따라 css는 style-loader, css-loader가 각각 처리한다.  
+css-loader 는 모든 css와 그 css 내부의 import한 다른 css 파일을 json 파일로 로드하고 style-loader에 넘겨준다  
+style-loader 는 json을 가져와서 style 태그를 추가하고 index.html 파일 안에 tag를 삽입한다.  
+https://heecheolman.tistory.com/33  
+  
+어떤 css파일이 존재하는데 import구문이 없이 css파일만 존재한다면 웹팩은 해당 css파일을 해석하지 않는다.
+하나의 test에 대해 여러개의 로더를 지정하면 오른쪽의 로더부터 사용이 된다.  
+  
+```bash
+npm install --save-dev css-loader
+npm install --save-dev style-loader
+```
+```javascript
+// webpack.config.json
+{
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
+}
+```
+  
+---
+  
 # Code Spliting
+코드 스플리팅을 이용하면 코드를 다양한 번들로 분리하고 요청에 따라 로드하거나 병렬로 로드하는것이 가능해진다.  
+
+
+## entry point 분할
 ```
   entry: {
     index: './src/index.js',
@@ -61,8 +95,31 @@ module.exports = {
 하지만 이 경우 단점이 존재한다 .
 
 1. 각 번들 사이에 중복된 모듈이 존재한다면 해당 모듈은 각각의 번들 모두에 포함된다.
-2. 유연하지 않으며 핵심 애플리케이션 로직으로 코드를 동적으로 분할하는 데 사용할 수 없다.
+1. 유연하지 않으며 핵심 애플리케이션 로직으로 코드를 동적으로 분할하는 데 사용할 수 없다.
 
+## Prevent Duplication
+dependOn 옵션을 사용하여 청크간 공유모듈에 대한 중복을 방지할수 있다.
+단일 HTML 페이지에서 여러 엔트리 포인트를 사용하는 경우 optimization.runtimeChunk: 'single'를 사용해야하는데 그렇지 않으면 어떤 문제가 발생한다고한다.
+```
+{
+   entry: {
+        index: './src/index.js',
+        another: './src/another-module.js',
+        index: {
+            import: './src/index.js',
+            dependOn: 'shared',
+        },
+        another: {
+            import: './src/another-module.js',
+            dependOn: 'shared',
+        },
+        shared: 'lodash',
+    },
+    optimization: {
+       runtimeChunk: 'single',
+    },
+}
+```
 
 ---
   
