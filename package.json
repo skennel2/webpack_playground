@@ -9,6 +9,7 @@
     "build2": "webpack --config ./webpack.config.02.js",
     "build3": "webpack --config ./webpack.config.03.js",
     "build4": "webpack --config ./webpack.config.04.js",
+    "build5": "webpack --config ./webpack.config.05.js",
     "start1": "webpack serve --open --config ./webpack.config.01.js "
   },
   "author": "",
